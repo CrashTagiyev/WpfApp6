@@ -1,0 +1,22 @@
+﻿<Window x:Class="WpfApp6.View.ShowCarPropView"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WpfApp6.View"
+        mc:Ignorable="d"
+        Title="ShowCarPropView" Height="450" Width="201">
+    <Grid>
+        <StackPanel Grid.Row="1">
+            <Label Height="150" Width="200" HorizontalAlignment="Left" >
+                <Image Stretch="UniformToFill" Source="{Binding SelectedCar.ImageUrl}"></Image>
+            </Label>
+            <TextBlock FontSize="20">Make</TextBlock>
+            <TextBlock FontSize="20" Text="{Binding SelectedCar.Make}"></TextBlock>
+            <TextBlock FontSize="20">Model</TextBlock>
+            <TextBlock FontSize="20" Text="{Binding SelectedCar.Model}"></TextBlock>
+            <TextBlock FontSize="20">Year</TextBlock>
+            <TextBlock FontSize="20" Text="{Binding SelectedCar.Year}"></TextBlock>
+        </StackPanel>
+    </Grid>
+</Window>

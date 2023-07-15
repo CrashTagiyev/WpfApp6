@@ -11,7 +11,7 @@ namespace WpfApp6.Models
     {
          static public int StaticID { get; set; }
     }
-    public class CarClass : EntityClass, INotifyPropertyChanged
+    public class CarClass : EntityClass
     {
 
         private string? make;
@@ -21,7 +21,6 @@ namespace WpfApp6.Models
             set
             {
                 make = value;
-                OnPropertyChanged(nameof(Make));
             }
         }
 
@@ -32,7 +31,6 @@ namespace WpfApp6.Models
             set
             {
                 model = value;
-                OnPropertyChanged(nameof(Model));
             }
         }
         private int? year;
@@ -42,16 +40,19 @@ namespace WpfApp6.Models
             set
             {
                 year = value;
-                OnPropertyChanged($"{nameof(Year)}");
             }
         }
 
-
-        public event PropertyChangedEventHandler PropertyChanged;
-
-        protected virtual void OnPropertyChanged(string propertyName)
+        private string? imageUrl;
+        public string? ImageUrl
         {
-            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
+            get { return imageUrl; }
+            set
+            {
+                imageUrl = value;
+            }
         }
+
+       
     }
 }

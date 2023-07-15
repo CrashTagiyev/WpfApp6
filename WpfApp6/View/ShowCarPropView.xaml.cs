@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -11,34 +10,20 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
 using System.Windows.Shapes;
-using WpfApp6.Models;
-using WpfApp6.Command;
 using WpfApp6.ViewModel;
 
-namespace WpfApp6
+namespace WpfApp6.View
 {
     /// <summary>
-    /// Interaction logic for MainWindow.xaml
+    /// Interaction logic for ShowCarPropView.xaml
     /// </summary>
-    public partial class MainWindow : Window
+    public partial class ShowCarPropView : Window
     {
-        
-        public MainWindow()
+        public ShowCarPropView()
         {
-            try
-            {
-
             InitializeComponent();
             DataContext = new ViewModelClass();
-            }
-            catch (Exception ex)
-            {
-
-                MessageBox.Show(ex.Message);
-            }
         }
-
     }
 }

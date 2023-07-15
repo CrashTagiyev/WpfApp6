@@ -16,39 +16,33 @@
                 <RowDefinition></RowDefinition>
                 <RowDefinition></RowDefinition>
             </Grid.RowDefinitions>
-        <StackPanel Grid.Row="0">
-            <TextBlock FontSize="20">Make</TextBlock>
-            <TextBox  Text="{Binding NewCar.Make, Mode=TwoWay}"></TextBox>
-            <TextBlock FontSize="20">Model</TextBlock>
-            <TextBox  Text="{Binding NewCar.Model, Mode=TwoWay}"></TextBox>
-            <TextBlock FontSize="20">Year</TextBlock>
-            <TextBox  Text="{Binding NewCar.Year, Mode=TwoWay}"></TextBox>
-            <Button Height="40" Width="100" Command="{Binding  AddCommand}" >Show Text</Button>
-        </StackPanel>
+            <StackPanel Grid.Row="0">
+                <TextBlock FontSize="20">Make</TextBlock>
+                <TextBox  Text="{Binding NewCar.Make, Mode=TwoWay}"></TextBox>
+                <TextBlock FontSize="20">Model</TextBlock>
+                <TextBox  Text="{Binding NewCar.Model, Mode=TwoWay}"></TextBox>
+                <TextBlock FontSize="20">Year</TextBlock>
+                <TextBox  Text="{Binding NewCar.Year, Mode=TwoWay}"></TextBox>
+                <TextBlock FontSize="20">ImageUrl</TextBlock>
+                <TextBox  Text="{Binding NewCar.ImageUrl, Mode=TwoWay}"></TextBox>
+                <Button Height="30" Width="100" Command="{Binding  AddCommand}" >Show Text</Button>
+            </StackPanel>
             <StackPanel Grid.Row="1">
                 <TextBox Height="20" Background="WhiteSmoke" Text="{Binding SearchedID}"></TextBox>
                 <Button FontSize="15" Command="{Binding ShowSearchedCommand}" >Search By ID</Button>
                 <TextBlock FontSize="20">Make</TextBlock>
-                <TextBlock FontSize="20" Text="{Binding SelectedCar.Make}"></TextBlock>
+                <TextBlock FontSize="20" Text="{Binding SearchedCar.Make}"></TextBlock>
                 <TextBlock FontSize="20">Model</TextBlock>
-                <TextBlock FontSize="20" Text="{Binding SelectedCar.Model}"></TextBlock>
+                <TextBlock FontSize="20" Text="{Binding SearchedCar.Model}"></TextBlock>
                 <TextBlock FontSize="20">Year</TextBlock>
-                <TextBlock FontSize="20" Text="{Binding SelectedCar.Year}"></TextBlock>
+                <TextBlock FontSize="20" Text="{Binding SearchedCar.Year}"></TextBlock>
             </StackPanel>
         </Grid>
         <StackPanel Grid.Column="1">
-            <ListView  ItemsSource="{Binding Cars}" SelectedItem="{Binding SelectedCar}" Height="430">
-                <ListView.ItemTemplate>
-                    <DataTemplate>
-                        <StackPanel Height="70">
-                            <TextBlock  Text="{Binding Id, StringFormat='Id: {0}'}"></TextBlock>
-                            <TextBlock Text="{Binding Make, StringFormat='Make: {0}'}"></TextBlock>
-                            <TextBlock Text="{Binding Model, StringFormat='Model: {0}'}"></TextBlock>
-                            <TextBlock Text="{Binding Year, StringFormat='Year: {0}'}"></TextBlock>
-                        </StackPanel>
-                    </DataTemplate>
-                </ListView.ItemTemplate>
-            </ListView>
+            <ComboBox   ItemsSource="{Binding Cars}" SelectedItem="{Binding SelectedCar}" DisplayMemberPath="Make"  Height="30"></ComboBox>
+            <Button Height="30" Width="100" Command="{Binding ShowCarViewCommand}" >Show</Button>
+            <Button Height="30" Width="100" Command="{Binding DeleteCommand}" >Delete</Button>
+            <Button Height="30" Width="100" Command="{Binding ShowUpdatedWindowCommand}">Update</Button>
         </StackPanel>
     </Grid>
 </Window>

@@ -1,0 +1,44 @@
+﻿<Window x:Class="WpfApp6.View.UpdateCarWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WpfApp6.View"
+        mc:Ignorable="d"
+        Title="UpdateCarWindow" Height="450" Width="500">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+            <StackPanel Grid.Column="0">
+            <TextBlock FontSize="20">Previous</TextBlock>
+                <Label Height="150" Width="250" HorizontalAlignment="Left" >
+                    <Image Stretch="UniformToFill" Source="{Binding SelectedCar.ImageUrl}"></Image>
+                </Label>
+                <TextBlock FontSize="20">Make</TextBlock>
+                <TextBlock FontSize="20" Text="{Binding SelectedCar.Make}"></TextBlock>
+                <TextBlock FontSize="20">Model</TextBlock>
+                <TextBlock FontSize="20" Text="{Binding SelectedCar.Model}"></TextBlock>
+                <TextBlock FontSize="20">Year</TextBlock>
+                <TextBlock FontSize="20" Text="{Binding SelectedCar.Year}"></TextBlock>
+            </StackPanel>
+
+        <StackPanel Grid.Column="1">
+            <TextBlock FontSize="20">Update</TextBlock>
+            <Label Height="150" Width="250" HorizontalAlignment="Left" >
+                <Image Stretch="UniformToFill" Source="{Binding SelectedCar.ImageUrl}"></Image>
+            </Label>
+            <TextBlock FontSize="20">Make</TextBlock>
+            <TextBox FontSize="20" Text="{Binding UpdatedCar.Make}"></TextBox>
+            <TextBlock FontSize="20">Model</TextBlock>
+            <TextBox FontSize="20" Text="{Binding UpdatedCar.Model}"></TextBox>
+            <TextBlock FontSize="20">Year</TextBlock>
+            <TextBox FontSize="20" Text="{Binding UpdatedCar.Year}"></TextBox>
+            <TextBlock FontSize="20">ImageUrl</TextBlock>
+            <TextBox FontSize="20" Text="{Binding UpdatedCar.ImageUrl}"></TextBox>
+            <Button Command="{Binding UpdateCommand}">Update</Button>
+        </StackPanel>
+
+    </Grid>
+</Window>
